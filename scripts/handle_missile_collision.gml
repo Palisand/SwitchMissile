@@ -16,6 +16,13 @@ if (player && player.number != owner_num) {
     instance_destroy();
 }
 else if (wall) {
+    // set speeds to produce ricochet (will affect direction)
+    if (collision_line(x, y, x + hspeed, y, wall, false, false)) {
+        hspeed = -hspeed;
+    }
+    if (collision_line(x, y, x, y + vspeed, wall, false, false)) {
+        vspeed = -vspeed;
+    }
     has_collided = true;
     speed = 0;
     gravity = 0;

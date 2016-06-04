@@ -126,8 +126,6 @@ key_map_aim_diagonally = vk_shift;
 key_map_detonate_mine = vk_control;
 key_map_power = vk_enter;
 
-gamepad_set_axis_deadzone(pad_num, 0.2);
-gamepad_set_button_threshold(pad_num, 0.1);
 button_map_jump = gp_shoulderlb;
 button_map_shoot = gp_shoulderrb;
 button_map_shoot_mine = gp_shoulderr;

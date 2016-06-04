@@ -113,6 +113,10 @@ with (o_spawn_player_init) {
     player.x_scale = iif(player.x &lt; room_width/2, 1, -1);
     player.color = global.player_colors[global.players[player_num, PLR.color_index]];
     player.pad_num = global.players[player_num, PLR.pad_num];
+    // set gamepad deadzones
+    gamepad_set_axis_deadzone(global.players[player_num, PLR.pad_num], 0.2);
+    gamepad_set_button_threshold(global.players[player_num, PLR.pad_num], 0.1);
+    // increment player number
     player_num++;
     // particles
     particle_burst(o_part_ctrl.type_missile_hit, 100, player.color, 360, player.x, player.y);
